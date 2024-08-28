@@ -78,5 +78,5 @@ npm run start
 
 # Deployments :
 
-- Deployed Site : https://refmemeet.vercel.app/
+- Postman API Testing : https://documenter.getpostman.com/view/23821977/2sAXjJ6Z3d
 - Associated Project : https://devfolio.co/projects/referhub-46fa
