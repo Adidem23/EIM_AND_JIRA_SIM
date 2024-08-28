@@ -28,12 +28,6 @@
 
 ## Key Features :
 
-### One to One Video Calls : 
-- Seamless Video and Audio streaming for PeertoPeer Communication
-
-### Screen Sharing : 
-- Seamless Screen Sharing from Peer to Peer
-
 
 # Video :
 - Youtube : 
@@ -43,7 +37,7 @@
  - [![My Skills](https://skillicons.dev/icons?i=react&perline=3)](https://skillicons.dev) ReactJs
  - [![My Skills](https://skillicons.dev/icons?i=nodejs&perline=3)](https://skillicons.dev) NodeJs
  - [![My Skills](https://skillicons.dev/icons?i=express&perline=3)](https://skillicons.dev) ExpressJs
- - [![My Skills](https://skillicons.dev/icons?i=gamemakerstudio&perline=3)](https://skillicons.dev) Socket.io
+ - [![My Skills](https://skillicons.dev/icons?i=jenkins&perline=3)](https://skillicons.dev) Jenkins
 
 
 # Prerequisites : 
