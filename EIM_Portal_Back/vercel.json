@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "./Server.js",
+        "src": "EIM_PORTAL_Back/Server.js",
         "use": "@vercel/node"
       }
     ]
