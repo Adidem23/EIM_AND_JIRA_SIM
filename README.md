@@ -38,6 +38,7 @@
  - [![My Skills](https://skillicons.dev/icons?i=express&perline=3)](https://skillicons.dev) ExpressJs
  - [![My Skills](https://skillicons.dev/icons?i=jenkins&perline=3)](https://skillicons.dev) Jenkins
  - [![My Skills](https://skillicons.dev/icons?i=python&perline=3)](https://skillicons.dev) Python
+- [![My Skills](https://skillicons.dev/icons?i=mongodb&perline=3)](https://skillicons.dev) MongoDB
 
 # Prerequisites : 
 
