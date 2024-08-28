@@ -51,4 +51,4 @@ Follow The Installation manual and install dependencies
 # Deployments :
 
 - Postman API Testing : https://documenter.getpostman.com/view/23821977/2sAXjJ6Z3d
-- Backend Hosted API : 
+- Backend Hosted API : https://eim-and-jira-sim-back.vercel.app/
