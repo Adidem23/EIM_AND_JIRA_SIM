@@ -28,7 +28,6 @@
 
 ## Key Features :
 
-
 # Video :
 - Youtube : 
 
@@ -38,7 +37,7 @@
  - [![My Skills](https://skillicons.dev/icons?i=nodejs&perline=3)](https://skillicons.dev) NodeJs
  - [![My Skills](https://skillicons.dev/icons?i=express&perline=3)](https://skillicons.dev) ExpressJs
  - [![My Skills](https://skillicons.dev/icons?i=jenkins&perline=3)](https://skillicons.dev) Jenkins
-
+ - [![My Skills](https://skillicons.dev/icons?i=python&perline=3)](https://skillicons.dev) Python
 
 # Prerequisites : 
 
