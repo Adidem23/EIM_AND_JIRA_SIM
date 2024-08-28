@@ -42,33 +42,13 @@
 
 # Prerequisites : 
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-  
-* NodeJs
-  ```sh
-  Download Nodejs Version ^ 18.0.0 LTS 
-  ```
 
 # Installation : 
 
 Follow The Installation manual and install dependencies 
 
-1. Run Command 
- ```sh
-   npm install --force
- ```
-
-2. Run Following Command in terminal
-```sh
-npm run start
-```
-
-3. App is Running on localhost:3000 😎
 
 # Deployments :
 
 - Postman API Testing : https://documenter.getpostman.com/view/23821977/2sAXjJ6Z3d
-- Associated Project : https://devfolio.co/projects/referhub-46fa
+- Backend Hosted API : 
