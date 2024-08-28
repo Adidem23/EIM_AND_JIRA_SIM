@@ -2,8 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "EIM_PORTAL_Back/Server.js",
+        "src": "./Server.js",
         "use": "@vercel/node"
+      }
+    ],
+    "routes":[
+      {
+        "src":"/(.*)",
+        "dest":"/Server.js"
       }
     ]
 }
