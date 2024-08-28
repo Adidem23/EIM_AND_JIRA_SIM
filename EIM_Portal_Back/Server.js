@@ -27,6 +27,10 @@ Mongoose.connect(URI).then(() => {
     console.log(`Error While Connecting Database : ${err}`)
 })
 
+app.get("/",(req,res)=>{
+    res.send("<h1>Server is ON !!</h1>")
+})
+
 app.post("/AddRecord", async (req, res) => {
 
     const InsertObject = {
