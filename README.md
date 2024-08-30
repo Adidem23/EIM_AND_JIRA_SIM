@@ -41,7 +41,8 @@ Implement customizable workflows in JIRA that automatically assign, prioritize, 
 •	Real-Time Notifications and Alerts:
 Set up real-time notifications to relevant team members upon ticket creation, ensuring prompt attention and response to critical issues.
 
-
+•	Comprehensive Reporting and Analytics:
+Develop detailed reporting and analytics features to track the performance of the automated ticketing system, identify trends, and optimize the process continuously.
 
 # Video :
 - Youtube : 
