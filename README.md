@@ -25,6 +25,7 @@
 ## About The Project : 
 
 ## EIMSIM : THE EIM AND JIRA SIMULATOR 
+In many organizations, the process of creating and updating JIRA tickets based on data from the EIM system is manual, time-consuming, and prone to errors. This disjointed process can lead to delays in task management, miscommunication, and inefficient tracking of issues and progress. The need for a more automated and seamless integration between EIM systems and JIRA is critical to overcoming these challenges and improving overall productivity
 
 ## Key Features :
 
