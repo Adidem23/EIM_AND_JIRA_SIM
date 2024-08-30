@@ -29,6 +29,12 @@ In many organizations, the process of creating and updating JIRA tickets based o
 
 ## Key Features :
 
+•	Enhance Accuracy and Consistency:
+Ensure that tickets are created with accurate and consistent information, reducing the chances of human error that can occur during manual entry.
+
+
+
+
 # Video :
 - Youtube : 
 
