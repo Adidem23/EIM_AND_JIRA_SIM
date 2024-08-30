@@ -38,6 +38,9 @@ Seamlessly integrate with existing monitoring and alerting tools to trigger JIRA
 •	Customizable Workflow Automation:
 Implement customizable workflows in JIRA that automatically assign, prioritize, and transition tickets based on the type of data entry or detected issue.
 
+•	Real-Time Notifications and Alerts:
+Set up real-time notifications to relevant team members upon ticket creation, ensuring prompt attention and response to critical issues.
+
 
 
 # Video :
