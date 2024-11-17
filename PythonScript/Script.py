@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import requests
 import json
+import yagmail
 
 # HOSTED NODEJS SERVER APIS
 ISSUE_URL="https://eim-and-jira-sim-back.vercel.app/"
@@ -26,11 +27,13 @@ CREATE_TICKETS_DATA_HARDWARE=[]
 UPDATE_TICKET_DATA_SOFTWARE=[]
 CREATE_TICKETS_DATA_SOFTWARE=[]
 
-# DICTIONARIES TO HOLD CREATED HARDWARE TICKETS DATA 
+# DICTIONARIES TO HOLD CREATED AND UPDATED HARDWARE TICKETS DATA 
 NEWLY_CRETED_HARDWARE_TICKETS=[]
+NEWLY_UPDATED_HARDWARE_TICKETS=[]
 
-# DICTIONARIES TO HOLD CREATED SOFTWARE TICKETS DATA 
+# DICTIONARIES TO HOLD CREATED  AND UPDATED SOFTWARE TICKETS DATA 
 NEWLY_CRETED_SOFTWARE_TICKETS=[]
+NEWLY_UPDATED_SOFTWARE_TICKETS=[]
 
 # HEADERS WHILE REQUEST  
 headers = {"Content-Type": "application/json"}
@@ -152,6 +155,7 @@ for id in CREATE_TICKETS_DATA_HARDWARE:
 
     if CREATE_TICKET_REQ.status_code==201:
          print(f'JIRA Ticket is Created for {ISSUEID} IN HARDWARE with Key :{CREATE_TICKET_REQ.json().get("key")}')
+         NEWLY_CRETED_HARDWARE_TICKETS.append(CREATE_TICKET_REQ.json())
 
     else : 
          print(f' Error While creating Ticket {ISSUEID}'+f'{CREATE_TICKET_REQ.json()}')
@@ -268,7 +272,8 @@ for id in CREATE_TICKETS_DATA_SOFTWARE:
 
     if CREATE_TICKET_REQ.status_code==201:
          print(f'JIRA Ticket is Created for {ISSUEID} IN SOFTWARE with Key :{CREATE_TICKET_REQ.json().get("key")}')
-
+         NEWLY_CRETED_SOFTWARE_TICKETS.append(CREATE_TICKET_REQ.json())
+         
     else : 
          print(f' Error While creating Ticket {ISSUEID}'+f'{CREATE_TICKET_REQ.json()}')
 
@@ -329,3 +334,19 @@ for id in UPDATE_TICKET_DATA_SOFTWARE:
 
     else : 
          print(f'Error While UPDATING Ticket {ISSUEID}'+f'{UPDATE_OBJECT_REQ.json()}')
+
+
+# SEND EMAIL FOR NEW TICKETS GENEREATED
+sender_password = os.getenv("EMAIL_ADDRESS_PASS")
+
+yag = yagmail.SMTP(user=USER_EMAIL, password=sender_password)
+yag.send(
+        to=os.getenv("RECEIVER_ADDRESS"),
+        subject="Email Notification For Newly Created and Updated Tickets",
+        contents=[NEWLY_CRETED_HARDWARE_TICKETS,NEWLY_CRETED_SOFTWARE_TICKETS]
+)
+
+print("Emails sent successfully!")
+
+# END OF THE LOVELY SCRIPT
+print("---| ALL PROCESSES COMPLETED : SCRIPT EXITED WTIH CODE 0 |---")
