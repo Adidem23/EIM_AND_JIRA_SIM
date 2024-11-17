@@ -1,0 +1,46 @@
+{
+    "fields": {
+        "project": {
+            "key": "SCRUM"
+        },
+        "summary": "Memory Leak Error",
+        "issuetype": {
+            "name":"Story"
+        },
+       "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "text": "description_text",
+                            "type": "text"
+                        }
+                    ]
+                }
+            ]
+        },
+        "customfield_10037":123456,
+        "customfield_10038":131030,
+        "customfield_10040":"JIRAAPI",
+        "customfield_10041":"v2.0.0",
+        "customfield_10042":"2024-06-15T11:00:00.000Z",
+        "customfield_10043":"2024-06-15T11:00:00.000Z",
+        "customfield_10044":"GDT",
+        "customfield_10045":"123.45.6.7",
+        "customfield_10046":"DATACALL",
+        "customfield_10047":"PROD",
+        "customfield_10048":[{
+            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/customFieldOption/10020",
+            "value": "GDB90",
+            "id": "10020"
+        },
+        {
+            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/customFieldOption/10022",
+            "value": "GDB40",
+            "id": "10022"
+        }]
+    }
+}

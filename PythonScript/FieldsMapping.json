@@ -1,0 +1,17 @@
+{
+    "appID": "customfield_10037",
+    "issueID": "customfield_10038",
+    "issueType": "customfield_10039",
+    "summary": "By Default Present",
+    "technologyType": "customfield_10040",
+    "technologyVersion": "customfield_10041",
+    "obsolateDate": "customfield_10042",
+    "issueRemediationDate": "customfield_10043",
+    "hardwareDetails": "",
+    "softwareDetails": "",
+    "department": "customfield_10044",
+    "servers": "customfield_10048",
+    "ipAddress": "customfield_10045",
+    "serverRole": "customfield_10046",
+    "environment": "customfield_10047"
+}
