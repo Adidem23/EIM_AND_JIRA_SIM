@@ -2,7 +2,8 @@
 import { cn } from "../../lib/utils";
 import React from "react";
 import { Avatar } from '@nextui-org/react'
-
+import { useUser } from '@clerk/clerk-react';
+import { SignOutButton } from "@clerk/clerk-react";
 
 export const AuroraBackground = ({
   className,
@@ -10,6 +11,9 @@ export const AuroraBackground = ({
   showRadialGradient = true,
   ...props
 }) => {
+
+  const user = useUser();
+
   return (
     (<main>
       <div
@@ -20,8 +24,9 @@ export const AuroraBackground = ({
         {...props}>
         <div className="absolute inset-0 overflow-hidden">
         <div style={{display:'flex',flexDirection:'row',width:'fit-content',marginLeft:'auto',marginRight:'90px',marginTop:'40px'}}>
-        <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" className="w-20 h-20 text-large" />
-        <h2 style={{marginTop:"10%",marginLeft:'30px'}}>Aditya Suryawanshi</h2>
+        <Avatar src={user.user?.imageUrl} className="w-20 h-20 text-large" />
+        <h2 style={{marginTop:"10%",marginLeft:'30px'}}>{user.user?.fullName}</h2>
+        {user.isSignedIn && <><div style={{marginLeft:"20px",marginTop:'32px'}}><SignOutButton /></div></>}
         </div>
           <div
             //   I'm sorry but this is what peak developer performance looks like // trigger warning

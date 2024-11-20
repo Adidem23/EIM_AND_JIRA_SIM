@@ -1,8 +1,8 @@
-import React from 'react'
+import { AuroraBackgroundDemoAfter } from "./AuroraBackAfter"
 
 const AfterSign = () => {
   return (
-    <div>AfterSign</div>
+    <AuroraBackgroundDemoAfter />
   )
 }
 

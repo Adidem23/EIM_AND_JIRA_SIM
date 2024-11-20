@@ -1,8 +1,22 @@
-import React from 'react'
+import { SignedOut, SignedIn } from "@clerk/clerk-react";
+import BeforeSign from "./BeforeSign";
+import AfterSign from "./AfterSign";
+
 
 const MainPage = () => {
   return (
-    <div>MainPage</div>
+    <>
+
+    <SignedOut>
+      <BeforeSign/>
+    </SignedOut>
+
+    <SignedIn>
+      <AfterSign />
+    </SignedIn>
+
+    </>
+
   )
 }
 

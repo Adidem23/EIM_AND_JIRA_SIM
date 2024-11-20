@@ -7,20 +7,42 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import {useState} from "react";
+import { useEffect, useState } from "react";
+import { useUser } from '@clerk/clerk-react';
+// import axios from 'axios';
 
 export function SidebarDemo() {
+  const { user } = useUser();
+  // const [AllTicketsData, setAllTicketsData] = useState([]);
+
+  // const GetTicketdata = async () => {
+
+  //   const headers = { "Content-Type": "application/json","Access-Control-Allow-Origin":"*"}
+
+  //   await axios.get("https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/search", { headers: headers }, { auth: { username: 'adityasuryawanshi5451@gmail.com', password: 'ATATT3xFfGF0N8HkX-lqawIeSO7jRCIiAcDVfnAu4L8n5H-LBpnHHt7hNzzXht7k3yGGSt79GEe4QoYLFgck7JwSFdYnTkEE_h-1Vor12QmVEpXiXgCEjUnRjinBmRZu0n6fZPqRs8TdNadaX-UjwIGMCKZCGtQJG3jIupsfzE-1NZADfmngiwA=367F68A7' } }).then((res) => {
+  //     console.log(res.data['total'])
+  //   }).catch((e) => {
+  //     console.log(`Error Occured During Request: ${e}`)
+  //   })
+
+  // }
+
+  const [open, setOpen] = useState(false);
+
+  // useEffect(() => {
+  //   GetTicketdata();
+  // }, [])
+
   const links = [
     {
-      label: "Dashboard",
-      href: "#",
+      label: "All Tickets",
       icon: (
         <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
       label: "Profile",
-      href: "http://localhost:5173/tabs",
+      href: "/profile",
       icon: (
         <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -40,15 +62,15 @@ export function SidebarDemo() {
       ),
     },
   ];
-  const [open, setOpen] = useState(false);
+
+
   return (
     (<div
       className={cn(
-        "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-        // for your use case, use `h-screen` instead of `h-[60vh]`
-        "h-[60vh]"
+        "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-10xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
+        "h-[100vh]"
       )}>
-      <Sidebar open={open} setOpen={setOpen} animate={true}>
+      <Sidebar open={open} setOpen={setOpen} animate={false}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             <>
@@ -63,11 +85,11 @@ export function SidebarDemo() {
           <div>
             <SidebarLink
               link={{
-                label: "Manu Arora",
+                label: `${user.fullName}`,
                 href: "#",
                 icon: (
                   <img
-                    src="https://assets.aceternity.com/manu.png"
+                    src={user.imageUrl}
                     className="h-7 w-7 flex-shrink-0 rounded-full"
                     width={50}
                     height={50}
@@ -77,7 +99,7 @@ export function SidebarDemo() {
           </div>
         </SidebarBody>
       </Sidebar>
-      <Dashboard />
+      <AllTickets />
     </div>)
   );
 }
@@ -92,7 +114,7 @@ export const Logo = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="font-medium text-black dark:text-white whitespace-pre">
-        Acet Labs
+        EIM AND JIRA PORTAL
       </motion.span>
     </a>)
   );
@@ -108,36 +130,34 @@ export const LogoIcon = () => {
   );
 };
 
-// Dummy dashboard component with content
-const Dashboard = () => {
+const AllTickets = () => {
   return (
-    (<div className="flex flex-1">
-      <div
-        className="p-2 md:p-10 rounded-tl-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 flex flex-col gap-2 flex-1 w-full h-full">
-        <div className="flex gap-2">
-          {[...new Array(4)].map((i) => (
-            <div
-              key={"first" + i}
-              className="h-20 w-full rounded-lg  bg-gray-100 dark:bg-neutral-800 animate-pulse"></div>
-          ))}
-        </div>
-        <div className="flex gap-2 flex-1">
-          {[...new Array(2)].map((i) => (
-            <div
-              key={"second" + i}
-              className="h-full w-full rounded-lg  bg-gray-100 dark:bg-neutral-800 animate-pulse"></div>
-          ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 w-full bg-white border border-neutral-200">
+
+      <div className="w-60 rounded-[10px] bg-white p-4 !pt-20 sm:p-6" style={{ border: '3px solid black', height: 'fit-content', marginLeft: '30px', marginTop: '30px' }}>
+        <time className="block text-xs text-gray-500">
+          29th June 2019
+        </time>
+
+        <a href="#">
+          <h3 className="mt-0.5 text-lg font-medium text-gray-900">
+            Next.js crash course by KhateykoBan
+          </h3>
+        </a>
+
+        <div className="mt-4 flex flex-wrap gap-1">
+          <span
+            className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+          >
+            Snippet
+          </span>
+
+          <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            JavaScript
+          </span>
         </div>
       </div>
-    </div>)
+
+    </div>
   );
 };
-
-
-const NEWConst=()=>{
-  return(
-    <>
-    <h1>This</h1>
-    </>
-  )
-}
