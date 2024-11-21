@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=["https://adityasuryawanshi5451-1731752299973.atlassian.net"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
