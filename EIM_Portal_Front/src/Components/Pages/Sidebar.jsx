@@ -13,25 +13,10 @@ import { useUser } from '@clerk/clerk-react';
 
 export function SidebarDemo() {
   const { user } = useUser();
-  // const [AllTicketsData, setAllTicketsData] = useState([]);
-
-  // const GetTicketdata = async () => {
-
-  //   const headers = { "Content-Type": "application/json","Access-Control-Allow-Origin":"*"}
-
-  //   await axios.get("https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/search", { headers: headers }, { auth: { username: 'adityasuryawanshi5451@gmail.com', password: 'ATATT3xFfGF0N8HkX-lqawIeSO7jRCIiAcDVfnAu4L8n5H-LBpnHHt7hNzzXht7k3yGGSt79GEe4QoYLFgck7JwSFdYnTkEE_h-1Vor12QmVEpXiXgCEjUnRjinBmRZu0n6fZPqRs8TdNadaX-UjwIGMCKZCGtQJG3jIupsfzE-1NZADfmngiwA=367F68A7' } }).then((res) => {
-  //     console.log(res.data['total'])
-  //   }).catch((e) => {
-  //     console.log(`Error Occured During Request: ${e}`)
-  //   })
-
-  // }
+  
 
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   GetTicketdata();
-  // }, [])
 
   const links = [
     {
@@ -48,8 +33,8 @@ export function SidebarDemo() {
       ),
     },
     {
-      label: "Settings",
-      href: "#",
+      label: "Charts",
+      href: "/charts",
       icon: (
         <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
