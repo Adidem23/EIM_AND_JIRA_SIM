@@ -32,7 +32,7 @@ FILTERED_TICKETS_DATA=[]
 # HEADERS WHILE REQUEST  
 headers = {"Content-Type": "application/json"}
 
-All_Tickets_Data_JSON=requests.get(JIRA_DOMAIN+"/rest/api/3/search",headers=headers,auth=(USER_EMAIL,USER_TOKEN))
+All_Tickets_Data_JSON=requests.get(JIRA_DOMAIN+"/rest/api/3/search?maxResults=100",headers=headers,auth=(USER_EMAIL,USER_TOKEN))
 
 for id in All_Tickets_Data_JSON.json().get("issues"):
     ticket_data = {

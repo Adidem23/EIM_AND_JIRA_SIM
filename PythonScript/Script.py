@@ -39,7 +39,7 @@ NEWLY_UPDATED_SOFTWARE_TICKETS=[]
 headers = {"Content-Type": "application/json"}
 
 # FETCH AND FILTER EXISTING TICKETS DATA FOR TICKET CREATION 
-All_Tickets_Data_JSON=requests.get(JIRA_DOMAIN+"/rest/api/3/search",headers=headers,auth=(USER_EMAIL,USER_TOKEN))
+All_Tickets_Data_JSON=requests.get(JIRA_DOMAIN+"/rest/api/3/search?maxResults=100",headers=headers,auth=(USER_EMAIL,USER_TOKEN))
 
 for id in All_Tickets_Data_JSON.json().get("issues"):
     ticket_data = {

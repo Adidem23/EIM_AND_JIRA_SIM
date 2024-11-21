@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import MainPage from './Components/Pages/MainPage'
 import {SidebarDemo} from '../src/Components/Pages/Sidebar'
-import Profile from './Components/Pages/Profile'
+import Profile from './Components/Pages/Auth/Profile'
 import MainCharts from './Components/Pages/Charts/MainCharts'
 import AddRecords from './Components/Pages/AddRecords'
 
