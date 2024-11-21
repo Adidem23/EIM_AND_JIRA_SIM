@@ -8,6 +8,16 @@ from dateutil import parser
 # STARTING CALL FOR FAST_API SERVER
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # LOADING DOTENV VARIABLES 
 load_dotenv()
 
