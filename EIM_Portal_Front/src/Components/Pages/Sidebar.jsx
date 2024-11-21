@@ -4,19 +4,20 @@ import {
   IconBrandTabler,
   IconSettings,
   IconUserBolt,
+  IconBrandGoogleAnalytics,
+  IconClipboardPlus
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 import { useEffect, useState } from "react";
 import { useUser } from '@clerk/clerk-react';
-// import axios from 'axios';
+import axios from 'axios';
 
 export function SidebarDemo() {
   const { user } = useUser();
-  
+
 
   const [open, setOpen] = useState(false);
-
 
   const links = [
     {
@@ -36,7 +37,14 @@ export function SidebarDemo() {
       label: "Charts",
       href: "/charts",
       icon: (
-        <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+        <IconBrandGoogleAnalytics className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      label: "Add Records",
+      href: "",
+      icon: (
+        <IconClipboardPlus className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
@@ -47,7 +55,6 @@ export function SidebarDemo() {
       ),
     },
   ];
-
 
   return (
     (<div
@@ -70,11 +77,11 @@ export function SidebarDemo() {
           <div>
             <SidebarLink
               link={{
-                label: `${user.fullName}`,
+                label: `${user && user.fullName}`,
                 href: "#",
                 icon: (
                   <img
-                    src={user.imageUrl}
+                    src={user && user.imageUrl}
                     className="h-7 w-7 flex-shrink-0 rounded-full"
                     width={50}
                     height={50}
@@ -116,17 +123,43 @@ export const LogoIcon = () => {
 };
 
 const AllTickets = () => {
+
+  const [AllTicketsGiven, setAllTicketsGiven] = useState([])
+
+  const GetAllTickets=async()=>{
+    await axios.get("http://127.0.0.1:8000/sendSixTicketsOnly").then((res)=>{
+      setAllTicketsGiven(res.data)
+    }).catch((err)=>{
+      console.log(`Error While Making Request:${err}`);
+    })
+  }
+
+  useEffect(()=>{
+ GetAllTickets()
+  },[])
+
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 w-full bg-white border border-neutral-200">
 
-      <div className="w-60 rounded-[10px] bg-white p-4 !pt-20 sm:p-6" style={{ border: '3px solid black', height: 'fit-content', marginLeft: '30px', marginTop: '30px' }}>
+    {AllTicketsGiven && AllTicketsGiven.map((Ticket)=>{
+      return(<>
+      
+      <div className="w-80 rounded-[10px] bg-white p-4 !pt-20 sm:p-6" style={{ border: '3px solid black', height: 'fit-content', marginLeft: '30px', marginTop: '20px' }}>
+        
+      <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            <a href={Ticket.LINK}>VISIT TICKET</a>
+      </span>
+
+      <p>{Ticket.KEY}</p>
+
         <time className="block text-xs text-gray-500">
-          29th June 2019
+         {Ticket.CREATED}
         </time>
 
         <a href="#">
           <h3 className="mt-0.5 text-lg font-medium text-gray-900">
-            Next.js crash course by KhateykoBan
+            {Ticket.SUMMARY}
           </h3>
         </a>
 
@@ -134,14 +167,37 @@ const AllTickets = () => {
           <span
             className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
           >
-            Snippet
+            {Ticket.ISSUETYPE}
           </span>
 
           <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
-            JavaScript
+            {Ticket.TECH_TYPE}
           </span>
+
+          <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            {Ticket.TECH_VERSION}
+          </span>
+
+          <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            {Ticket.DEPARTMENT}
+          </span>
+
+          <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            {Ticket.IPADDRESS}
+          </span>
+
+
+          <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            {Ticket.ENV}
+          </span>
+
         </div>
       </div>
+      
+      </>)
+    })}
+
+      
 
     </div>
   );

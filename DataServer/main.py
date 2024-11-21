@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://adityasuryawanshi5451-1731752299973.atlassian.net"], 
+    allow_origins=["http://localhost:5173"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -36,6 +36,7 @@ All_Tickets_Data_JSON=requests.get(JIRA_DOMAIN+"/rest/api/3/search",headers=head
 
 for id in All_Tickets_Data_JSON.json().get("issues"):
     ticket_data = {
+        'LINK':id['self'],
         'KEY':id['key'],
         'CREATED':id['fields'].get('created'),
         'APPID': id['fields'].get('customfield_10037'),
@@ -63,6 +64,11 @@ async def read_root():
 @app.get("/getAllTickets")
 async def read_root():
     return FILTERED_TICKETS_DATA
+
+@app.get("/sendSixTicketsOnly")
+async def read_root():
+    NEW_UPDATED_DICT=FILTERED_TICKETS_DATA[:6]
+    return NEW_UPDATED_DICT
 
 @app.get("/pieChartsData")
 async def read_root():
@@ -115,12 +121,12 @@ async def read_root():
             CURRENT_DATE_COUNT_5=CURRENT_DATE_COUNT_5+1
 
     BAR_GRAPH_OBJECT={
-        current_date:CURRENT_DATE_COUNT,
-        current_date_less_1:CURRENT_DATE_COUNT_1,
-        current_date_less_2:CURRENT_DATE_COUNT_2,
-        current_date_less_3:CURRENT_DATE_COUNT_3,
-       current_date_less_4:CURRENT_DATE_COUNT_4,
-        current_date_less_5:CURRENT_DATE_COUNT_5
+        "current_date":CURRENT_DATE_COUNT,
+        "current_date_less_1":CURRENT_DATE_COUNT_1,
+        "current_date_less_2":CURRENT_DATE_COUNT_2,
+        "current_date_less_3":CURRENT_DATE_COUNT_3,
+       "current_date_less_4":CURRENT_DATE_COUNT_4,
+        "current_date_less_5":CURRENT_DATE_COUNT_5
     }
 
     return BAR_GRAPH_OBJECT
