@@ -48,7 +48,8 @@ Develop detailed reporting and analytics features to track the performance of th
 - Youtube :
 
 # Architcture Diagram : 
-![Untitled-2023-10-05-0753](https://github.com/user-attachments/assets/69507ea4-085f-479b-b159-845c412ec4d9)
+![Untitled-2023-10-05-0753](https://github.com/user-attachments/assets/92053687-cfe9-4b30-9e8b-62d0e0a78063)
+
 
 # Built With : 
 
