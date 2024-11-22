@@ -66,7 +66,6 @@ Develop detailed reporting and analytics features to track the performance of th
 # Installation : 
 Follow The Installation manual and install dependencies 
 
-
 # Deployments :
 
 - Postman API Testing : https://documenter.getpostman.com/view/23821977/2sAXjJ6Z3d
