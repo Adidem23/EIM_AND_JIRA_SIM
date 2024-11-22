@@ -1,10 +1,10 @@
 {
     "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10010.requestTypePractice",
-    "id": "10003",
-    "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/10003",
-    "key": "SCRUM-4",
+    "id": "10090",
+    "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/10090",
+    "key": "SCRUM-91",
     "fields": {
-        "statuscategorychangedate": "2024-11-16T17:09:01.589+0530",
+        "statuscategorychangedate": "2024-11-22T15:44:22.016+0530",
         "issuetype": {
             "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issuetype/10003",
             "id": "10003",
@@ -35,27 +35,27 @@
         "customfield_10031": null,
         "fixVersions": [],
         "customfield_10033": null,
-        "aggregatetimespent": null,
         "customfield_10034": null,
+        "aggregatetimespent": null,
         "resolution": null,
         "customfield_10035": null,
-        "customfield_10037": 131003.0,
+        "customfield_10037": 14817.0,
         "customfield_10027": null,
         "customfield_10028": null,
         "customfield_10029": null,
         "resolutiondate": null,
         "workratio": -1,
+        "watches": {
+            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/SCRUM-91/watchers",
+            "watchCount": 1,
+            "isWatching": true
+        },
         "issuerestriction": {
             "issuerestrictions": {},
             "shouldDisplay": true
         },
-        "watches": {
-            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/SCRUM-4/watchers",
-            "watchCount": 1,
-            "isWatching": true
-        },
-        "lastViewed": "2024-11-16T17:09:39.186+0530",
-        "created": "2024-11-16T17:09:01.185+0530",
+        "lastViewed": "2024-11-22T15:45:58.277+0530",
+        "created": "2024-11-22T15:44:21.721+0530",
         "customfield_10020": null,
         "customfield_10021": null,
         "customfield_10022": null,
@@ -78,71 +78,43 @@
                 "message": "To set an epic as the parent, use the epic link instead"
             }
         },
-        "customfield_10019": "0|hzzzzz:",
+        "customfield_10019": "0|i000e7:",
         "timeestimate": null,
         "aggregatetimeoriginalestimate": null,
         "versions": [],
         "issuelinks": [],
-        "assignee": {
-            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/user?accountId=712020%3Abd5cc5ce-0bd3-4c5a-b31d-32a6491745de",
-            "accountId": "712020:bd5cc5ce-0bd3-4c5a-b31d-32a6491745de",
-            "emailAddress": "adityasuryawanshi5451@gmail.com",
-            "avatarUrls": {
-                "48x48": "https://secure.gravatar.com/avatar/27285e7797e834f15e5c63fc8dd435ff?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAS-2.png",
-                "24x24": "https://secure.gravatar.com/avatar/27285e7797e834f15e5c63fc8dd435ff?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAS-2.png",
-                "16x16": "https://secure.gravatar.com/avatar/27285e7797e834f15e5c63fc8dd435ff?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAS-2.png",
-                "32x32": "https://secure.gravatar.com/avatar/27285e7797e834f15e5c63fc8dd435ff?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAS-2.png"
-            },
-            "displayName": "Aditya Suryawanshi",
-            "active": true,
-            "timeZone": "Asia/Calcutta",
-            "accountType": "atlassian"
-        },
-        "updated": "2024-11-16T17:09:01.795+0530",
+        "assignee": null,
+        "updated": "2024-11-22T15:44:21.818+0530",
         "status": {
-            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/status/10001",
+            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/status/10000",
             "description": "",
             "iconUrl": "https://adityasuryawanshi5451-1731752299973.atlassian.net/",
-            "name": "In Progress",
-            "id": "10001",
+            "name": "To Do",
+            "id": "10000",
             "statusCategory": {
-                "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/statuscategory/4",
-                "id": 4,
-                "key": "indeterminate",
-                "colorName": "yellow",
-                "name": "In Progress"
+                "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/statuscategory/2",
+                "id": 2,
+                "key": "new",
+                "colorName": "blue-gray",
+                "name": "To Do"
             }
         },
         "components": [],
         "timeoriginalestimate": null,
-        "description": {
-            "type": "doc",
-            "version": 1,
-            "content": [
-                {
-                    "type": "paragraph",
-                    "content": [
-                        {
-                            "type": "text",
-                            "text": "This is First issue which is being created"
-                        }
-                    ]
-                }
-            ]
-        },
+        "description": null,
         "customfield_10010": null,
         "customfield_10014": null,
         "customfield_10015": null,
         "timetracking": {},
         "customfield_10005": null,
         "customfield_10006": null,
-        "security": null,
         "customfield_10007": null,
+        "security": null,
         "customfield_10008": null,
         "customfield_10009": null,
-        "aggregatetimeestimate": null,
         "attachment": [],
-        "summary": "Deminsing Software",
+        "aggregatetimeestimate": null,
+        "summary": "Power supply failure",
         "creator": {
             "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/user?accountId=712020%3Abd5cc5ce-0bd3-4c5a-b31d-32a6491745de",
             "accountId": "712020:bd5cc5ce-0bd3-4c5a-b31d-32a6491745de",
@@ -159,9 +131,9 @@
             "accountType": "atlassian"
         },
         "subtasks": [],
-        "customfield_10040": "Database",
-        "customfield_10041": "Provision v1",
-        "customfield_10042": "2024-11-29",
+        "customfield_10040": "Server",
+        "customfield_10041": "Oracle v4",
+        "customfield_10042": "2024-02-03",
         "reporter": {
             "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/user?accountId=712020%3Abd5cc5ce-0bd3-4c5a-b31d-32a6491745de",
             "accountId": "712020:bd5cc5ce-0bd3-4c5a-b31d-32a6491745de",
@@ -177,19 +149,18 @@
             "timeZone": "Asia/Calcutta",
             "accountType": "atlassian"
         },
-        "customfield_10043": "2024-11-30",
-        "customfield_10044": "GDT",
+        "customfield_10043": "2024-11-07",
+        "customfield_10044": "R&D",
         "aggregateprogress": {
             "progress": 0,
             "total": 0
         },
-        "customfield_10045": "123.4.5.7",
+        "customfield_10045": "192.168.116.105",
         "customfield_10001": null,
+        "customfield_10046": "WebServer",
         "customfield_10002": [],
-        "customfield_10046": "DataCenter",
-        "customfield_10003": null,
         "customfield_10047": "DEV",
-        "customfield_10004": null,
+        "customfield_10003": null,
         "customfield_10048": [
             {
                 "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/customFieldOption/10020",
@@ -202,25 +173,26 @@
                 "id": "10022"
             }
         ],
-        "customfield_10038": 131020.0,
-        "customfield_10039": "Hardware",
+        "customfield_10004": null,
+        "customfield_10038": 146506.0,
+        "customfield_10039": "Software",
         "environment": null,
         "duedate": null,
         "progress": {
             "progress": 0,
             "total": 0
         },
+        "votes": {
+            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/SCRUM-91/votes",
+            "votes": 0,
+            "hasVoted": false
+        },
         "comment": {
             "comments": [],
-            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/10003/comment",
+            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/10090/comment",
             "maxResults": 0,
             "total": 0,
             "startAt": 0
-        },
-        "votes": {
-            "self": "https://adityasuryawanshi5451-1731752299973.atlassian.net/rest/api/3/issue/SCRUM-4/votes",
-            "votes": 0,
-            "hasVoted": false
         },
         "worklog": {
             "startAt": 0,

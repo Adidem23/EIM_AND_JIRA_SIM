@@ -37,6 +37,7 @@ All_Tickets_Data_JSON=requests.get(JIRA_DOMAIN+"/rest/api/3/search?maxResults=10
 for id in All_Tickets_Data_JSON.json().get("issues"):
     ticket_data = {
         'LINK':id['self'],
+        'STATUS':id['fields']['status'].get('name'),
         'KEY':id['key'],
         'CREATED':id['fields'].get('created'),
         'APPID': id['fields'].get('customfield_10037'),
@@ -65,15 +66,10 @@ async def read_root():
 async def read_root():
     return FILTERED_TICKETS_DATA
 
-@app.get("/sendSixTicketsOnly")
-async def read_root():
-    NEW_UPDATED_DICT=FILTERED_TICKETS_DATA[:6]
-    return NEW_UPDATED_DICT
-
 @app.get("/pieChartsData")
 async def read_root():
-    HARDWARE_NUM=1
-    SOFTWARE_NUM=1
+    HARDWARE_NUM=0
+    SOFTWARE_NUM=0
 
     for id in FILTERED_TICKETS_DATA:
         if id['ISSUETYPE']=="Hardware":
