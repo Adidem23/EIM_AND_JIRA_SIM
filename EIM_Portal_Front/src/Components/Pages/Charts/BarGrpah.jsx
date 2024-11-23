@@ -50,6 +50,6 @@ export function Bargraph() {
     },[])
 
     return (
-        <Chart chartType="ColumnChart" width="800px" height="60%" data={GraphData} style={{ marginTop: '30px' }} />
+        <Chart chartType="ColumnChart" width="700px" height="60%" data={GraphData} style={{ marginTop: '30px' }} />
     );
 }

@@ -234,7 +234,7 @@ const AllTickets = () => {
                 </span>
 
                 <button className="whitespace-nowrap rounded-full bg-green-100 px-2.5 py-0.5 text-xs text-blue-600" onClick={async (e)=>{e.preventDefault()
-                 await axios.post("http://127.0.0.1:5000/ASKGEMINI",{query:`${Ticket.SUMMARY}`}).then((res)=>{
+                 await axios.post("http://127.0.0.1:5000/ASKGEMINI",{summary:`${Ticket.SUMMARY}`,Issutype:`${Ticket.ISSUETYPE}`,Techtype:`${Ticket.TECH_TYPE}`,TechDepart:`${Ticket.DEPARTMENT}`,Tech_VERSION:`${Ticket.TECH_VERSION}`}).then((res)=>{
                   alert(`Hints for the Issue are : ${res.data}`)
                  }).catch((err)=>{
                   alert(`Error while hints generation : ${err}`)

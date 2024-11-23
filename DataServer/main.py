@@ -126,4 +126,88 @@ async def read_root():
     }
 
     return BAR_GRAPH_OBJECT
-   
+
+
+@app.get("/techPieChartData")
+async def read_root():
+   DATABASE_COUNT=0
+   NETWORKING_COUNT=0
+   SERVER_COUNT=0
+   STORAGE_COUNT=0
+
+   for id in FILTERED_TICKETS_DATA:
+       if id['TECH_TYPE']=="Database":
+           DATABASE_COUNT=DATABASE_COUNT+1
+       if id['TECH_TYPE']=="Networking":
+           NETWORKING_COUNT=NETWORKING_COUNT+1
+       if id['TECH_TYPE']=="Server":
+           SERVER_COUNT=SERVER_COUNT+1
+       if id['TECH_TYPE']=="Storage":
+           STORAGE_COUNT=STORAGE_COUNT+1
+
+   RETURN_PIE_OBJECT={
+       "DATABASE":DATABASE_COUNT,
+       "NETWORK":NETWORKING_COUNT,
+       "SERVER":SERVER_COUNT,
+       "STORAGE":STORAGE_COUNT
+   }
+                  
+   return RETURN_PIE_OBJECT  
+
+@app.get("/deptBarGraph")
+async def read_root():
+    IT_NUM=0
+    FINANCE_NUM=0
+    HR_NUM=0
+    RD_NUM=0
+    GDT_NUM=0
+
+    for id in FILTERED_TICKETS_DATA:
+        if id['DEPARTMENT']=="IT":
+            IT_NUM=IT_NUM+1
+        if id['DEPARTMENT']=="Finance":
+            FINANCE_NUM=FINANCE_NUM+1
+        if id['DEPARTMENT']=="HR":
+            HR_NUM=HR_NUM+1
+        if id['DEPARTMENT']=="R&D":
+            RD_NUM=RD_NUM+1
+        if id['DEPARTMENT']=="GDT":
+            GDT_NUM=GDT_NUM+1
+
+    RETURN_OBJECT={
+        "IT":IT_NUM,
+        "FINANCE":FINANCE_NUM,
+        "HR":HR_NUM,
+        "RD":RD_NUM,
+        "GDT":GDT_NUM
+    }
+
+    return RETURN_OBJECT
+        
+           
+@app.get('/envData')
+async def read_root():
+    DEV_COUNT=0
+    PROD_COUNT=0
+    QA_COUNT=0
+    STAGE_COUNT=0
+
+    for id in FILTERED_TICKETS_DATA:
+        if id['ENV']=="DEV":
+            DEV_COUNT=DEV_COUNT+1
+        if id['ENV']=="PROD":
+            PROD_COUNT=PROD_COUNT+1
+        if id['ENV']=="QA":
+            QA_COUNT=QA_COUNT+1
+        if id['ENV']=="STAGE":
+            STAGE_COUNT=STAGE_COUNT+1
+    
+
+    CUSTOM_OBJECT={
+        "DEV":DEV_COUNT,
+        "PROD":PROD_COUNT,
+        "QA":QA_COUNT,
+        "STAGE":STAGE_COUNT
+    }
+        
+    return CUSTOM_OBJECT

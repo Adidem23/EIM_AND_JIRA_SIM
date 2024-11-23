@@ -58,14 +58,32 @@ app.get("/RunScriptPipeline", async (req, res) => {
 })
 
 app.post("/ASKGEMINI", async (req, res) => {
-    const query = req.body.query
+    const SUMMARY = req.body.summary
+    const Issutype = req.body.Issutype
+    const Techtype = req.body.Techtype
+    const TechDepart = req.body.TechDepart
+    const Tech_VERSION = req.body.Tech_VERSION
+
+
     const genAI = new GoogleGenerativeAI(GOOGLE_GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    const prompt =`Team Has many Issues in JIRA project and one of issue is ${query}. Give some resolution of this issue`;
+    const prompt = `You are an AI assistant for Enterprise Inventory Management. Analyze the following issue details and provide a solution:
+
+    Issue Summary: ${SUMMARY}
+    Issue Type: ${Issutype}  
+    Technology Involved: ${Techtype} 
+    Version: ${Tech_VERSION}
+    Responsible Department: ${TechDepart} 
+
+    Based on this information:
+    1. What could be the root cause of this issue?  
+    2. Provide actionable steps to resolve it.  
+    3. Highlight any risks or dependencies that could impact resolution.  
+    4. Suggest an efficient plan to remediate the issue before {{issueRemediationDate}}.`;
 
     const result = await model.generateContent(prompt);
-    
+
     res.send(result.response.text())
 })
 
