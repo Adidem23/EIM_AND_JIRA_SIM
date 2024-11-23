@@ -48,8 +48,7 @@ Develop detailed reporting and analytics features to track the performance of th
 - Youtube :
 
 # Architcture Diagram : 
-![y](https://github.com/user-attachments/assets/3f0843f8-954f-47a5-a240-9612f3d4c013)
-
+![Untitled-2023-10-05-0753](https://github.com/user-attachments/assets/92053687-cfe9-4b30-9e8b-62d0e0a78063)
 
 
 # Built With : 
@@ -62,12 +61,17 @@ Develop detailed reporting and analytics features to track the performance of th
 - [![My Skills](https://skillicons.dev/icons?i=mongodb&perline=3)](https://skillicons.dev) MongoDB
 
 # Prerequisites : 
+- python
+- NodeJs
+- Trial JIRA DOMAIN
+- MongoDB ATLAS ACCOUNT
+- Jenkins Installed on System
 
 # Installation : 
 Follow The Installation manual and install dependencies 
 
-# Deployments :
 
+# Deployments :
 - Postman API Testing : https://documenter.getpostman.com/view/23821977/2sAXjJ6Z3d
 - Backend Hosted API : https://eim-and-jira-sim-back.vercel.app/
 - Frontend Hosterd Server : https://eim-and-jira-sim-front.vercel.app/
