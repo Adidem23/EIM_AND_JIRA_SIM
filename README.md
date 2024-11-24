@@ -45,7 +45,7 @@ Set up real-time notifications to relevant team members upon ticket creation, en
 Develop detailed reporting and analytics features to track the performance of the automated ticketing system, identify trends, and optimize the process continuously.
 
 # Video :
-- Youtube :
+- Youtube : https://youtu.be/vi2NSczOVG8?si=u_BCq_6KJqdTxkO7
 
 # Architcture Diagram : 
 ![Untitled-2023-10-05-0753](https://github.com/user-attachments/assets/92053687-cfe9-4b30-9e8b-62d0e0a78063)
